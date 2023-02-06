@@ -1,0 +1,192 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+
+  font-family: "Roboto", sans-serif;
+}
+.container {
+  width: 90%;
+  max-width: 1024px;
+  margin: 0 auto;
+  /* background: red; */
+}
+
+/* start header */
+
+header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  border-bottom: 1px solid #e8e8e8;
+}
+
+/* flex : vào thẻ cha để duy chuyển thẻ con */
+.header__container {
+  /* display: flex đưa các thẻ con lên trục chính */
+  display: flex;
+  /* mặc định: trục chính => chiều ngang */
+  /* justify-content : trục chính */
+  justify-content: space-between;
+  height: 80px;
+  align-items: center;
+  /*  */
+  /* align-items: end; */
+  /* flex-direction : thay đổi chiều của trục chính*/
+  /* flex-direction: column; */
+}
+
+.header__container a {
+  text-decoration: none;
+  color: black;
+  margin-left: 20px;
+  color: white;
+  font-size: 20px;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+.header__container a.active {
+  color: #e62b4a;
+}
+.header__container .logo {
+  font-size: 24px;
+  font-weight: 700;
+  color: #fff;
+}
+/* end header */
+
+/* start banner */
+
+.banner {
+  background-image: url("./image-video/home_slider.jpg");
+  height: 90vh;
+  min-height: 500px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.banner__container {
+  color: white;
+  text-align: center;
+  border: 2px solid orange;
+  width: 40%;
+}
+.banner__container h2 {
+  font-size: 40px;
+  font-weight: 700;
+  margin: 30px 0;
+}
+.banner__container button {
+  padding: 20px 40px;
+  background: #e62b4a;
+  border: none;
+  text-transform: capitalize;
+  color: white;
+  font-size: 20px;
+  transition: 0.3s;
+}
+.banner__container button:hover {
+  background: #af2239;
+  cursor: pointer;
+}
+.banner__container i {
+  font-size: 50px;
+  color: #e62b4a;
+  animation-name: animate_arrow1;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+  /* ăn translatex 1 */
+  /* 0 */
+}
+/* end banner */
+
+@keyframes animate_arrow1 {
+  from {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+  to {
+    transform: translateY(100px);
+    opacity: 0;
+  }
+}
+
+@keyframes animate_arrow2 {
+  0% {
+    color: orange;
+    transform: scale(0.1) translateX(0px) rotate(0deg);
+  }
+  50% {
+    color: white;
+    transform: scale(2) translateX(100px) rotate(180deg);
+  }
+  100% {
+    color: blue;
+    transform: scale(1) translateX(-100px) rotate(-180deg);
+  }
+}
+
+.carousel{
+  padding:80px;
+  background: #000;
+  color:#fff;
+}
+.carousel__title{
+  text-align: center;
+  margin-bottom: 50px;
+}
+.item__container{
+  background-color: #fff;
+  color: #888;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.item__container::before{
+  content: '';
+  display: block;
+  position: absolute;
+  height: 100%;
+  width: 5%;
+  background: red;
+  top:-100%;
+  right: 0;
+  transition: 0.3s;
+}
+.item__container:hover::before{
+  top:0
+}
+.carousel__item i{
+  font-size: 50px;
+}
+
+.slick-dots li.slick-active button::before{
+  color: red;
+}
+.slick-dots li button::before{
+  color:white;
+}
+
+.slick-dots li button::before{
+  font-size: 15px;
+}
+
+#demo{
+  position: relative;
+}
+
+#demo::before{
+  content: "hello ";
+  display: block;
+  position: absolute;
+  position: relative;
+}
